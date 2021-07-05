@@ -1,0 +1,20 @@
+<h1>Listagem dos carros</h1>
+
+<table class="table table-bordered">
+    <tr class="thead-dark">
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Preço</th>
+    </tr>
+
+    <tr *ngFor="let carro of carros">
+      <td>{{carro.brand.name}}</td>
+      <td>{{carro.model}}</td>
+      <td> R$: {{carro.price}}</td>
+        <div class="table-buttons">
+          <td> <button type="button" class="btn btn-primary" (click)="detalhes(carro.id)">Detalhes</button> </td>
+          <td><button type="button"  class="btn btn-primary"  (click)="remover(carro.id)">Apagar</button> </td>
+        </div>
+    </tr>
+</table>
+

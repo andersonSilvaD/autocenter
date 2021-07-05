@@ -1,0 +1,79 @@
+      <h2>
+        Detalhes Individuais do veiculo
+      </h2>
+
+          <body>
+              <table class="table table-bordered">
+                  <tr class="thead-dark">
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Preço</th>
+                    <th>Ano de fabricação</th>
+                    <th>Cor</th>
+                  </tr>
+
+        <!--Indica erro mas funciona(pelo menos no meu pc... o_0)-->
+                  <tr>
+                    <td>{{carro.brand.name}}</td>
+                    <td>{{carro.model}}</td>
+                    <td> R$: {{carro.price}}</td>
+                    <td> R$: {{carro.yearOfFabrication}}</td>
+                    <td> R$: {{carro.color}}</td>
+                  </tr>
+              </table>
+
+          <h2>Atualizar informações</h2>
+
+      <form (ngSubmit)="confirm()">
+              <div>
+                <label for="yearOfFabrication">ano de fabricação</label>
+            <select name="yearOfFabrication" [(ngModel)]="carro.yearOfFabrication">
+              <option name="yearOfFabrication">1996</option>
+              <option name="yearOfFabrication">1997</option>
+              <option name="yearOfFabrication">1998</option>
+              <option name="yearOfFabrication">1999</option>
+              <option name="yearOfFabrication">2000</option>
+              <option name="yearOfFabrication">2001</option>
+              <option name="yearOfFabrication">2002</option>
+              <option name="yearOfFabrication">2003</option>
+              <option name="yearOfFabrication">2004</option>
+              <option name="yearOfFabrication">2005</option>
+              <option name="yearOfFabrication">2006</option>
+              <option name="yearOfFabrication">2007</option>
+              <option name="yearOfFabrication">2008</option>
+              <option name="yearOfFabrication">2009</option>
+              <option name="yearOfFabrication">2010</option>
+              <option name="yearOfFabrication">2011</option>
+              <option name="yearOfFabrication">2012</option>
+              <option name="yearOfFabrication">2013</option>
+              <option name="yearOfFabrication">2014</option>
+              <option name="yearOfFabrication">2015</option>
+              <option name="yearOfFabrication">2016</option>
+              <option name="yearOfFabrication">2017</option>
+              <option name="yearOfFabrication">2018</option>
+              <option name="yearOfFabrication">2019</option>
+              <option name="yearOfFabrication">2020</option>
+              <option name="yearOfFabrication">2021</option>
+              <option name="yearOfFabrication">2022</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="color">Selecione uma cor </label>
+            <select  [(ngModel)]="carro.color" id="color-select"  name="color">
+              <option name="model">Preto</option>
+              <option name="model">Vermelho</option>
+              <option name="model">Azul</option>
+            </select>
+          </div>
+
+          <div class="field-box">
+              <label for="price" >Qual o valordo veiculo</label>
+                <input mask="000.00" thousandSeparator="." type="text"  class="field-input" id="price"  [(ngModel)]="carro.price"  name="price">
+          </div>
+          <button (click)="confirm()" type="button">Confirmar alterações</button>
+      </form>
+
+
+</body>
+

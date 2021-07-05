@@ -1,0 +1,78 @@
+
+<form (ngSubmit)="search()">
+
+
+<div class="formularioBusca">
+  <h2> Buscar pela oferta ideal</h2>
+
+  <div>
+      <label for="model">Selecione uma marca </label>
+        <select (change)="setModelos(this.formBusca.brand)" [(ngModel)]="formBusca.brand" id="brand-select"  name="brand">
+          <option>--</option>
+          <option name="brand" *ngFor="let marca of marcasDisponiveis">{{marca.name}}</option>
+        </select>
+  </div>
+
+    <div>
+      <label for="model">Selecione um modelo </label>
+        <select [(ngModel)]="formBusca.model" id="model-select"  name="model">
+          <option>--</option>
+          <option name="model" *ngFor="let modelo of modelosDisponiveis">{{modelo}}</option>
+        </select>
+    </div>
+        <div>
+      <label for="yearOfFabrication">ano de fabricação</label>
+        <select name="yearOfFabrication" [(ngModel)]="formBusca.yearOfFabrication">
+          <option name="yearOfFabrication">1996</option>
+          <option name="yearOfFabrication">1997</option>
+          <option name="yearOfFabrication">1998</option>
+          <option name="yearOfFabrication">1999</option>
+          <option name="yearOfFabrication">2000</option>
+          <option name="yearOfFabrication">2001</option>
+          <option name="yearOfFabrication">2002</option>
+          <option name="yearOfFabrication">2003</option>
+          <option name="yearOfFabrication">2004</option>
+          <option name="yearOfFabrication">2005</option>
+          <option name="yearOfFabrication">2006</option>
+          <option name="yearOfFabrication">2007</option>
+          <option name="yearOfFabrication">2008</option>
+          <option name="yearOfFabrication">2009</option>
+          <option name="yearOfFabrication">2010</option>
+          <option name="yearOfFabrication">2011</option>
+          <option name="yearOfFabrication">2012</option>
+          <option name="yearOfFabrication">2013</option>
+          <option name="yearOfFabrication">2014</option>
+          <option name="yearOfFabrication">2015</option>
+          <option name="yearOfFabrication">2016</option>
+          <option name="yearOfFabrication">2017</option>
+          <option name="yearOfFabrication">2018</option>
+          <option name="yearOfFabrication">2019</option>
+          <option name="yearOfFabrication">2020</option>
+          <option name="yearOfFabrication">2021</option>
+          <option name="yearOfFabrication">2022</option>
+        </select>
+
+      </div>
+      <div>
+        <label for="color">Selecione uma cor </label>
+        <select  [(ngModel)]="formBusca.color" id="color-select"  name="color">
+          <option name="model">--</option>
+          <option name="model">Preto</option>
+          <option name="model">Vermelho</option>
+          <option name="model">Azul</option>
+        </select>
+      </div>
+
+        <button class="btn btn-primary"  (click)="search()" type="button">Buscar</button>
+
+        <tr *ngFor="let carro of carrosEncontrados">
+          <td>{{carro.brand.name}}</td>
+          <td>{{carro.model}}</td>
+          <td mask="00.000.00" thousandSeparator="." > R$: {{carro.price}}</td>
+            <div class="table-buttons">
+              <td> <button type="button" class="btn btn-primary" (click)="detalhes(carro.id)">Detalhes</button> </td>
+              <td><button type="button"  class="btn btn-primary"  (click)="remover(carro.id)">Apagar</button> </td>
+            </div>
+        </tr>
+  </div>
+</form>

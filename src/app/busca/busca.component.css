@@ -1,0 +1,23 @@
+
+.formularioBusca {
+  margin-left: 25%;
+  align-items: center;
+}
+
+label{
+  margin-right: 5%;
+}
+.formularioBusca{
+  width: 35%;
+}
+.labelSelect{
+display: flex;
+justify-content: space-around;
+}
+td{
+  margin: 2%;
+}
+
+button{
+  margin: 2%;
+}

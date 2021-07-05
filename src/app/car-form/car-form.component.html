@@ -1,0 +1,100 @@
+
+<!--
+<form (ngSubmit)='confirm()'>
+
+  <h2> Nova Transferencia</h2>
+
+    <div>
+      <label for="brand"></label>
+        <select [(ngModel)]="carro.brand" id="brand-select" name="brand">
+          <option value="">--Selecione uma marcar--</option>
+          <option value="General Motors">General Motors</option>
+          <option value="Volkswagen">Volkswagen</option>
+        </select>
+      </div>
+
+    <div>
+        <label for="model" >Qual o nome do modelo do veiculo?</label>
+          <input id="model" type="text" name="model" [(ngModel)]="carro.model" >
+    </div>
+
+    <div>
+        <label for="price" >Qual o valordo veiculo</label>
+          <input id="price" type="number" name="price" value="0">
+    </div>
+
+    <button type="submit">Confirmar</button>
+</form>
+-->
+    <main>
+      <h2> Nova Transferencia</h2>
+
+      <form (ngSubmit)='confirm()'>
+
+        <div class="field-container">
+          <label class="label" for="model">Selecione uma marca </label>
+          <select class="select" class="field-input" (change)="setModelos(this.carro.brand)" [(ngModel)]='carro.brand' id="brand-select"  name="brand">
+            <option>--</option>
+            <option  name="brand" *ngFor="let marca of marcasDisponiveis">{{marca.name}}</option>
+          </select>
+        </div>
+
+        <div class="field-container">
+            <label class="label" for="model">Selecione um modelo </label>
+                    <select class="field-input"  [(ngModel)]="carro.model" id="brand-select"  name="model">
+                      <option>--</option>
+                      <option name="model" *ngFor="let modelo of modelosDisponiveis">{{modelo}}</option>
+                    </select>
+        </div>
+
+        <div class="field-container">
+              <label class="label" for="yearOfFabrication">ano de fabricação</label>
+                <select class="select" class="field-input" name="yearOfFabrication" [(ngModel)]="carro.yearOfFabrication">
+                  <option name="yearOfFabrication">1996</option>
+                  <option name="yearOfFabrication">1997</option>
+                  <option name="yearOfFabrication">1998</option>
+                  <option name="yearOfFabrication">1999</option>
+                  <option name="yearOfFabrication">2000</option>
+                  <option name="yearOfFabrication">2001</option>
+                  <option name="yearOfFabrication">2002</option>
+                  <option name="yearOfFabrication">2003</option>
+                  <option name="yearOfFabrication">2004</option>
+                  <option name="yearOfFabrication">2005</option>
+                  <option name="yearOfFabrication">2006</option>
+                  <option name="yearOfFabrication">2007</option>
+                  <option name="yearOfFabrication">2008</option>
+                  <option name="yearOfFabrication">2009</option>
+                  <option name="yearOfFabrication">2010</option>
+                  <option name="yearOfFabrication">2011</option>
+                  <option name="yearOfFabrication">2012</option>
+                  <option name="yearOfFabrication">2013</option>
+                  <option name="yearOfFabrication">2014</option>
+                  <option name="yearOfFabrication">2015</option>
+                  <option name="yearOfFabrication">2016</option>
+                  <option name="yearOfFabrication">2017</option>
+                  <option name="yearOfFabrication">2018</option>
+                  <option name="yearOfFabrication">2019</option>
+                  <option name="yearOfFabrication">2020</option>
+                  <option name="yearOfFabrication">2021</option>
+                  <option name="yearOfFabrication">2022</option>
+                </select>
+        </div>
+
+        <div class="field-container">
+          <label class="label" for="color">Selecione uma cor </label>
+          <select  class="select" class="field-input" [(ngModel)]="carro.color" id="color-select"  name="color">
+            <option name="model">Preto</option>
+            <option name="model">Vermelho</option>
+            <option name="model">Azul</option>
+          </select>
+        </div>
+
+        <div class="field-container">
+            <label for="price" >Qual o valordo veiculo</label>
+              <input placeholder="R$" mask="000.00" thousandSeparator="." type="text"  class="field-input" id="price"  [(ngModel)]="carro.price"  name="price">
+        </div>
+
+        <button type="button" class="btn btn-primary"(click)="confirm()">Confirmar</button>
+    </form>
+  </main>
+
